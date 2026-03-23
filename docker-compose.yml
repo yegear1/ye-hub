@@ -1,0 +1,12 @@
+services:
+  ye-hub:
+    build: .
+    container_name: ye-hub
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Aqui colocaremos as chaves do Notion no futuro!
+      # - NOTION_TOKEN=sua_chave_aqui
+      # - NOTION_DATABASE_ID=seu_id_aqui
