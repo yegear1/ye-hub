@@ -6,7 +6,7 @@
     let { data } = $props();
     let projects = $derived(data.projects);
 
-    let activeFilter = $state('ALL')
+    let activeFilter = $state('All')
     let searchQuery = $state('') // O estado de pesquisa
 
     const categories = $derived(['All', ...new Set(projects.map(p => p.category))]);
@@ -80,7 +80,7 @@
             Loading services...
         </div>
     {:else}
-        {#each projects as project (project.id)}
+        {#each filteredProjects as project (project.id)}
             <ProjectCard {project} />
         {/each}
     {/if}
