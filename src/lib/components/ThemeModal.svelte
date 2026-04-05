@@ -46,7 +46,7 @@
                             onclick={() => themeState.setColorTheme('custom')}
                             class={`flex flex-col items-center justify-center py-4 px-3 rounded-xl border-2 transition-all cursor-pointer ${
                                 themeState.colorTheme === 'custom' 
-                                ? (themeState.colorTheme === 'default' ? 'border-neutral-900 dark:border-white bg-neutral-50 dark:bg-neutral-800' : 'border-primary bg-accent/30')
+                                ? 'border-primary bg-accent/30'
                                 : (themeState.colorTheme === 'default' ? 'border-neutral-200 dark:border-neutral-700 hover:border-neutral-300' : 'border-border hover:border-accent')
                             }`}>
                             <span class={`text-sm font-semibold mb-1 ${themeState.colorTheme === 'default' ? 'text-neutral-900 dark:text-white' : 'text-card-foreground'}`}>Red Dark</span>

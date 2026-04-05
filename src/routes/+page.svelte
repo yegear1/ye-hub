@@ -1,25 +1,32 @@
 <script lang="ts">
     import { Search } from 'lucide-svelte';
     import { onMount } from 'svelte';
-    import ProjectCard from '$lib/components/layouts/ye-default.svelte';
+    import ProjectCard from '$lib/components/ProjectCard.svelte';
     import SkeletonCard from '$lib/components/SkeletonCard.svelte';
 
+    // Data source passed down from the +page.server.ts load function
     let { data } = $props();
     let projects = $derived(data.projects);
 
+    // Active UI states for filtering and search querying
     let activeFilter = $state('All')
     let searchQuery = $state('')
 
-    const categories = $derived(['All', ...new Set(projects.map(p => p.category))]);
+    // Generate dynamic category list from available projects, keeping 'All' as default 
+    const categories = $derived(['All', ...new Set(projects.map((p: any) => p.category))]);
 
+    // Derived reactive value: Automatically updates filtered result array 
+    // whenever projects, activeFilter, or searchQuery states change
     let filteredProjects = $derived(
-        projects.filter(p => {
+        projects.filter((p: any) => {
+            // Category filter: strict match or wildcard 'All'
             const matchesCategory = activeFilter === 'All' || p.category === activeFilter;
             
+            // Search filter: fuzzy matching across name, description, and multiple tags
             const searchLower = searchQuery.toLowerCase();
             const matchesSearch = 
                 p.name.toLowerCase().includes(searchLower) || 
-                p.tags.some(tag => tag.toLowerCase().includes(searchLower)) ||
+                p.tags.some((tag: string) => tag.toLowerCase().includes(searchLower)) ||
                 p.description.toLowerCase().includes(searchLower);
 
             return matchesCategory && matchesSearch;

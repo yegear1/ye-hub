@@ -1,6 +1,6 @@
 <script lang="ts">
     import '../app.css';
-    import { Github, Coffee, Globe, Sun, Moon, Twitter, Linkedin, Mail, AlertCircle, Info } from 'lucide-svelte';
+    import { Code2, Coffee, Globe, Sun, Moon, MessageSquare, Briefcase, Mail, AlertCircle, Info } from 'lucide-svelte';
     import { themeState } from '$lib/stores/theme.svelte';
     
     let { children } = $props();
@@ -33,10 +33,10 @@
             <a href="/about" class={`hidden sm:flex items-center gap-2 text-xs font-medium transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100' : 'text-muted-foreground hover:text-foreground'}`}>
                 <Info size={16} strokeWidth={1.5} /> <span>About</span>
             </a>
-            <a href="#" class={`hidden sm:flex items-center gap-2 text-xs font-medium transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100' : 'text-muted-foreground hover:text-foreground'}`}>
-                <Github size={16} strokeWidth={1.5} /> <span>Source</span>
+            <a href="https://github.com/yegear/ye-hub" class={`hidden sm:flex items-center gap-2 text-xs font-medium transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100' : 'text-muted-foreground hover:text-foreground'}`}>
+                <Code2 size={16} strokeWidth={1.5} /> <span>Source</span>
             </a>
-            <a href="#" class={`hidden sm:flex items-center gap-2 text-xs font-medium transition-colors mr-2 ${themeState.colorTheme === 'default' ? 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100' : 'text-muted-foreground hover:text-foreground'}`}>
+            <a href="https://github.com/sponsors/yegear" class={`hidden sm:flex items-center gap-2 text-xs font-medium transition-colors mr-2 ${themeState.colorTheme === 'default' ? 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100' : 'text-muted-foreground hover:text-foreground'}`}>
                 <Coffee size={16} strokeWidth={1.5} /> <span>Support</span>
             </a>
 
@@ -67,9 +67,9 @@
             © 2026 ye-hub. Built by <span class={`font-medium ${themeState.colorTheme === 'default' ? 'text-neutral-900 dark:text-neutral-200' : 'text-foreground'}`}>Yegear</span>.
         </p>
         <div class="flex items-center gap-6">
-            <a href="#" class={`transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-400 hover:text-neutral-900 dark:hover:text-white' : 'hover:text-foreground'}`}><Twitter size={16} strokeWidth={1.5} /></a>
-            <a href="#" class={`transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-400 hover:text-neutral-900 dark:hover:text-white' : 'hover:text-foreground'}`}><Linkedin size={16} strokeWidth={1.5} /></a>
-            <a href="#" class={`transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-400 hover:text-neutral-900 dark:hover:text-white' : 'hover:text-foreground'}`}><Mail size={16} strokeWidth={1.5} /></a>
+            <a href="https://github.com/yegear/ye-hub" class={`transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-400 hover:text-neutral-900 dark:hover:text-white' : 'hover:text-foreground'}`}><MessageSquare size={16} strokeWidth={1.5} /></a>
+            <a href="https://github.com/yegear/ye-hub" class={`transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-400 hover:text-neutral-900 dark:hover:text-white' : 'hover:text-foreground'}`}><Briefcase size={16} strokeWidth={1.5} /></a>
+            <a href="https://github.com/yegear/ye-hub" class={`transition-colors ${themeState.colorTheme === 'default' ? 'text-neutral-400 hover:text-neutral-900 dark:hover:text-white' : 'hover:text-foreground'}`}><Mail size={16} strokeWidth={1.5} /></a>
         </div>
     </div>
 </footer>
